@@ -1,1 +1,15 @@
-{}
+{
+    "jitsi.command.settings.updated": "Setările Jitsi au fost actualizate",
+    "jitsi.command.settings.unable_to_set": "Imposibil de setat setările utilizatorului",
+    "jitsi.command.settings.unable_to_get": "Imposibil de obținut setările utilizatorului",
+    "jitsi.command.settings.invalid_parameters": "Parametri de setări invalid",
+    "jitsi.command.settings.current_values": "###### Setări Jitsi:\n* Încorporat: |{{.Embedded}}|\n* Schemă de denumire: |{{.NamingScheme}}|",
+    "jitsi.command.help.title": "###### Mattermost Jitsi Plugin - Ajutor de comandă Slash\n",
+    "jitsi.command.help.text": "* |/jitsi| - Creați o nouă întâlnire \n* |/jitsi [topic]| - Creați o nouă întâlnire cu subiect specificat \n* |/jitsi help| - Afișați acest text de ajutor \n* |/jitsi settings| - Vizualizați setările de utilizator actuale pentru pluginul Jitsi \n* |/jitsi settings [setare] [valoare]| - Actualizați setările utilizatorului (a se vedea mai jos pentru opțiuni) \n\n###### Setări Jitsi: \n* |/jitsi settings încorporate [true/false]|: (Experimental) Când este adevărat, întâlnirea Jitsi este încorporată ca o fereastră plutitoare în interiorul materiei. Când este falsă, întâlnirea Jitsi se deschide într-o fereastră nouă. \n* |/jitsi settings naming_scheme [words/uuid/matermost/ask]|: Selectați cum sunt generate numele de întâlnire cu una dintre aceste opțiuni:\n    * |words|: Cuvinte aleatorii în engleză în cazul titlului (de exemplu, PlayfulDragonsObserveCuriously)\n    * |uuid|: UUID (identificator unic universal) \n    * |matermost|: nume specifice mattermost. Combinarea numelui echipei, numele canalului și textul la întâmplare în canalele publice și private; numele întâlnirii personale în canalele de mesaje directe și de grup. \n    * |ask|: pluginul vă solicită pentru a selecta numele de fiecare dată când începeți o întâlnire",
+    "jitsi.ask.uuid_meeting": "Numele întâlnirii cu UUID",
+    "jitsi.ask.title": "Începerea reuniunii Jitsi",
+    "jitsi.ask.select_meeting_type": "Selectați tipul de întâlnire pe care doriți să o începeți",
+    "jitsi.ask.personal_meeting": "Întâlnire personală",
+    "jitsi.ask.meeting_name_random_words": "Numele întâlnirii cu cuvinte aleatorii",
+    "jitsi.ask.channel_meeting": "Întâlnirea canalului"
+}
