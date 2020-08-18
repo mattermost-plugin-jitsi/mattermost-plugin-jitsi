@@ -1,98 +1,74 @@
 {
-  "jitsi.ask.channel_meeting": {
-    "hash": "sha1-c38fb5c89ece9869aa4b9b6d1d041ab64df1eb8f",
-    "other":"Совещание канала"
-  },
-  "jitsi.ask.meeting_name_random_words": {
-    "hash": "sha1-ee8f64a8a20eb04fefde418d9dc55d409664a2fb",
-    "other":"Название совещания из случайных слов"
-  },
-  "jitsi.ask.personal_meeting": {
-    "hash": "sha1-9aa3e0500b4b0af16961174dcf792e9e11c5b220",
-    "other":"Личная встреча"
-  },
-  "jitsi.ask.select_meeting_type": {
-    "hash": "sha1-e3bb1fbe427d3433e652b343086fa94926b8760b",
-    "other":"Выберите тип встречи которую вы хотите начать"
-  },
-  "jitsi.ask.title": {
-    "hash": "sha1-06bd54e7555f74e5c45f19f5d357cabf399226d8",
-    "other":"Начало совещания Jitsi"
-  },
-  "jitsi.ask.uuid_meeting": {
-    "hash": "sha1-573ba198f97f8c38ee986a2cad4068d0e54c9dbd",
-    "other":"Имя совещания с UUID"
-  },
-  "jitsi.command.help.text": {
-    "hash": "sha1-08e1afe25556ca110a40b00eadf99b6716db697a",
-    "other":"* |/jitsi| - Создать новое совещание\n* |/jitsi [тема]| - Создать новое совещание с заданной темой\n* |/jitsi help| - Показать справочную информацию\n* |/jitsi settings| - Посмотреть свои персональные настройки для совещаний Jitsi\n* |/jitsi settings [настройка] [значение]| - Обновить свои персональные настройки (см. ниже для подробностей)\n\n###### Настройки Jitsi:\n* |/jitsi settings embedded [true/false]|: (Экспериментальное) При значении true совещания Jitsi встраиваются как плавающее окно внутри клиента Mattermost. При значении false совещания Jitsi открываются в новом окне.\n* |/jitsi settings naming_scheme [words/uuid/mattermost/ask]|: Выберите схему создания имени совещания:\n    * |words|: Случайные слова на английском языке (e.g. PlayfulDragonsObserveCuriously)\n    * |uuid|: UUID (универсальный уникальный идентификатор)\n    * |mattermost|: Специфические имена Mattermost. Комбинация имени команды, имени канала и случайного текста для публичных и приватных каналов; личное имя встречи в каналах личных сообщений.\n    * |ask|: Плагин предлагает выбрать имя при каждом начале совещания"
-  },
-  "jitsi.command.help.title": {
-    "hash": "sha1-4323c51f8bbbb49db2a370dd496d29531a034b3c",
-    "other":"###### Mattermost Jitsi плагин - Справка по слэш-команде\n"
-  },
-  "jitsi.command.settings.current_values": {
-    "hash": "sha1-fe2a45638786b11d783dedacabad04227391973b",
-    "other":"###### Jitsi настройки:\n* Встраивать: |{{.Embedded}}|\n* Схема названий: |{{.NamingScheme}}|"
-  },
-  "jitsi.command.settings.invalid_parameters": {
-    "hash": "sha1-f72c018607477396d845c7a3e11be73490b79a56",
-    "other":"Неверные параметры настроек"
-  },
-  "jitsi.command.settings.unable_to_get": {
-    "hash": "sha1-7e8adf669715dc73bf3f13568593cc30539af7ec",
-    "other":"Не удалось получить пользовательские настройки"
-  },
-  "jitsi.command.settings.unable_to_set": {
-    "hash": "sha1-3bab2d5cd97e52eb365ab5e25aa5c89bf2a78f31",
-    "other":"Не удалось установить пользовательские настройки"
-  },
-  "jitsi.command.settings.updated": {
-    "hash": "sha1-ea98a80baec114b32359809c03c7b11038b18eb6",
-    "other":"Настройки Jitsi обновлены"
-  },
-  "jitsi.command.settings.wrong_embedded_value": {
-    "hash": "sha1-63273ba7ad2d4defa65c3c31765ed57668f157c3",
-    "other":"Неверное значение `embedded`, должно быть `true` или `false`."
-  },
-  "jitsi.command.settings.wrong_field": {
-    "hash": "sha1-75edec3f38b0abd2004b0d5cb5318462993f6a18",
-    "other":"Неверное поле конфигурации, используйте `embedded` или `naming_scheme`."
-  },
-  "jitsi.command.settings.wrong_naming_scheme_value": {
-    "hash": "sha1-fb39ca34d10fa7b9ccea30f0ebf7e1f7936b6b32",
-    "other":"Неверное значение `naming_scheme`, используйте `ask`, `words`, `uuid` или `mattermost`."
-  },
-  "jitsi.start_meeting.channel_meeting_topic": {
-    "hash": "sha1-87eea3707ed3cad060b73cb43c0d4efe4ec8cc84",
-    "other":"Совещание канала {{.ChannelName}}"
-  },
-  "jitsi.start_meeting.default_meeting_topic": {
-    "hash": "sha1-b057021a4c94f69bc1f90d9fa69a6165caeb4cce",
-    "other":"Совещание Jitsi"
-  },
-  "jitsi.start_meeting.fallback_text": {
-    "hash": "sha1-e956f3c3fd1a6c3995976154e0f45099234a1f0a",
-    "other":"Видеоконференция начата по адресу [{{.MeetingID}}]({{.MeetingURL}}).\n\n[Присоединиться]({{.MeetingURL}})"
-  },
-  "jitsi.start_meeting.meeting_id": {
-    "hash": "sha1-8a1315eaeb59e44132aa5c27e4f53e7ba92359f7",
-    "other":"Идентификатор совещания"
-  },
-  "jitsi.start_meeting.meeting_link_valid_until": {
-    "hash": "sha1-2707cc0764b955fca772a7dd5337e4aaa6018fcc",
-    "other":"Ссылка на совещание действительна до: {{.Datetime}}"
-  },
-  "jitsi.start_meeting.personal_meeting_id": {
-    "hash": "sha1-ba2b43d1c43e28926cc42c26651693567363dd77",
-    "other":"Идентификатор личной встречи (PMI)"
-  },
-  "jitsi.start_meeting.personal_meeting_topic": {
-    "hash": "sha1-22fab211c66c011f0e1f2ca6303443da6e20793e",
-    "other":"Личная встреча {{.Name}}"
-  },
-  "jitsi.start_meeting.slack_attachment_text": {
-    "hash": "sha1-7726587ccfee9bb7539aad458c154f8be3d95dcd",
-    "other":"{{.MeetingType}}: [{{.MeetingID}}]({{.MeetingURL}})\n\n[Присоединиться]({{.MeetingURL}})"
-  }
+    "jitsi.ask.channel_meeting.hash": "sha1-c38fb5c89ece9869aa4b9b6d1d041ab64df1eb8f",
+    "jitsi.ask.channel_meeting.other": "Совещание канала",
+    "jitsi.ask.meeting_name_random_words.hash": "sha1-ee8f64a8a20eb04fefde418d9dc55d409664a2fb",
+    "jitsi.ask.meeting_name_random_words.other": "Название совещания из случайных слов",
+    "jitsi.ask.personal_meeting.hash": "sha1-9aa3e0500b4b0af16961174dcf792e9e11c5b220",
+    "jitsi.ask.personal_meeting.other": "Личная встреча",
+    "jitsi.ask.select_meeting_type.hash": "sha1-e3bb1fbe427d3433e652b343086fa94926b8760b",
+    "jitsi.ask.select_meeting_type.other": "Выберите тип встречи которую вы хотите начать",
+    "jitsi.ask.title.hash": "sha1-06bd54e7555f74e5c45f19f5d357cabf399226d8",
+    "jitsi.ask.title.other": "Начало совещания Jitsi",
+    "jitsi.ask.uuid_meeting.hash": "sha1-573ba198f97f8c38ee986a2cad4068d0e54c9dbd",
+    "jitsi.ask.uuid_meeting.other": "Имя совещания с UUID",
+    "jitsi.command.help.text.hash": "sha1-08e1afe25556ca110a40b00eadf99b6716db697a",
+    "jitsi.command.help.text.other": "* |/jitsi| - Создать новое совещание\n* |/jitsi [тема]| - Создать новое совещание с заданной темой\n* |/jitsi help| - Показать справочную информацию\n* |/jitsi settings| - Посмотреть свои персональные настройки для совещаний Jitsi\n* |/jitsi settings [настройка] [значение]| - Обновить свои персональные настройки (см. ниже для подробностей)\n\n###### Настройки Jitsi:\n* |/jitsi settings embedded [true/false]|: (Экспериментальное) При значении true совещания Jitsi встраиваются как плавающее окно внутри клиента Mattermost. При значении false совещания Jitsi открываются в новом окне.\n* |/jitsi settings naming_scheme [words/uuid/mattermost/ask]|: Выберите схему создания имени совещания:\n    * |words|: Случайные слова на английском языке (e.g. PlayfulDragonsObserveCuriously)\n    * |uuid|: UUID (универсальный уникальный идентификатор)\n    * |mattermost|: Специфические имена Mattermost. Комбинация имени команды, имени канала и случайного текста для публичных и приватных каналов; личное имя встречи в каналах личных сообщений.\n    * |ask|: Плагин предлагает выбрать имя при каждом начале совещания",
+    "jitsi.command.help.title.hash": "sha1-4323c51f8bbbb49db2a370dd496d29531a034b3c",
+    "jitsi.command.help.title.other": "###### Mattermost Jitsi плагин - Справка по слэш-команде\n",
+    "jitsi.command.settings.current_values.hash": "sha1-fe2a45638786b11d783dedacabad04227391973b",
+    "jitsi.command.settings.current_values.other": "###### Jitsi настройки:\n* Встраивать: |{{.Embedded}}|\n* Схема названий: |{{.NamingScheme}}|",
+    "jitsi.command.settings.invalid_parameters.hash": "sha1-f72c018607477396d845c7a3e11be73490b79a56",
+    "jitsi.command.settings.invalid_parameters.other": "Неверные параметры настроек",
+    "jitsi.command.settings.unable_to_get.hash": "sha1-7e8adf669715dc73bf3f13568593cc30539af7ec",
+    "jitsi.command.settings.unable_to_get.other": "Не удалось получить пользовательские настройки",
+    "jitsi.command.settings.unable_to_set.hash": "sha1-3bab2d5cd97e52eb365ab5e25aa5c89bf2a78f31",
+    "jitsi.command.settings.unable_to_set.other": "Не удалось установить пользовательские настройки",
+    "jitsi.command.settings.updated.hash": "sha1-ea98a80baec114b32359809c03c7b11038b18eb6",
+    "jitsi.command.settings.updated.other": "Настройки Jitsi обновлены",
+    "jitsi.command.settings.wrong_embedded_value.hash": "sha1-63273ba7ad2d4defa65c3c31765ed57668f157c3",
+    "jitsi.command.settings.wrong_embedded_value.other": "Неверное значение `embedded`, должно быть `true` или `false`.",
+    "jitsi.command.settings.wrong_field.hash": "sha1-75edec3f38b0abd2004b0d5cb5318462993f6a18",
+    "jitsi.command.settings.wrong_field.other": "Неверное поле конфигурации, используйте `embedded` или `naming_scheme`.",
+    "jitsi.command.settings.wrong_naming_scheme_value.hash": "sha1-fb39ca34d10fa7b9ccea30f0ebf7e1f7936b6b32",
+    "jitsi.command.settings.wrong_naming_scheme_value.other": "Неверное значение `naming_scheme`, используйте `ask`, `words`, `uuid` или `mattermost`.",
+    "jitsi.start_meeting.channel_meeting_topic.hash": "sha1-87eea3707ed3cad060b73cb43c0d4efe4ec8cc84",
+    "jitsi.start_meeting.channel_meeting_topic.other": "Совещание канала {{.ChannelName}}",
+    "jitsi.start_meeting.default_meeting_topic.hash": "sha1-b057021a4c94f69bc1f90d9fa69a6165caeb4cce",
+    "jitsi.start_meeting.default_meeting_topic.other": "Совещание Jitsi",
+    "jitsi.start_meeting.fallback_text.hash": "sha1-e956f3c3fd1a6c3995976154e0f45099234a1f0a",
+    "jitsi.start_meeting.fallback_text.other": "Видеоконференция начата по адресу [{{.MeetingID}}]({{.MeetingURL}}).\n\n[Присоединиться]({{.MeetingURL}})",
+    "jitsi.start_meeting.meeting_id.hash": "sha1-8a1315eaeb59e44132aa5c27e4f53e7ba92359f7",
+    "jitsi.start_meeting.meeting_id.other": "Идентификатор совещания",
+    "jitsi.start_meeting.meeting_link_valid_until.hash": "sha1-2707cc0764b955fca772a7dd5337e4aaa6018fcc",
+    "jitsi.start_meeting.meeting_link_valid_until.other": "Ссылка на совещание действительна до: {{.Datetime}}",
+    "jitsi.start_meeting.personal_meeting_id.hash": "sha1-ba2b43d1c43e28926cc42c26651693567363dd77",
+    "jitsi.start_meeting.personal_meeting_id.other": "Идентификатор личной встречи (PMI)",
+    "jitsi.start_meeting.personal_meeting_topic.hash": "sha1-22fab211c66c011f0e1f2ca6303443da6e20793e",
+    "jitsi.start_meeting.personal_meeting_topic.other": "Личная встреча {{.Name}}",
+    "jitsi.start_meeting.slack_attachment_text.hash": "sha1-7726587ccfee9bb7539aad458c154f8be3d95dcd",
+    "jitsi.start_meeting.slack_attachment_text.other": "{{.MeetingType}}: [{{.MeetingID}}]({{.MeetingURL}})\n\n[Присоединиться]({{.MeetingURL}})",
+    "jitsi.start_meeting.slack_attachment_text": "{{.MeetingType}}: [{{.MeetingID}}]({{.MeetingURL}})\n\n[Присоединиться]({{.MeetingURL}})",
+    "jitsi.start_meeting.personal_meeting_topic": "Личная встреча {{.Name}}",
+    "jitsi.start_meeting.personal_meeting_id": "Идентификатор личной встречи (PMI)",
+    "jitsi.start_meeting.meeting_link_valid_until": "Ссылка на совещание действительна до: {{.Datetime}}",
+    "jitsi.start_meeting.meeting_id": "Идентификатор совещания",
+    "jitsi.start_meeting.fallback_text": "Видеоконференция начата по адресу [{{.MeetingID}}]({{.MeetingURL}}).\n\n[Присоединиться]({{.MeetingURL}})",
+    "jitsi.start_meeting.default_meeting_topic": "Совещание Jitsi",
+    "jitsi.start_meeting.channel_meeting_topic": "Совещание канала {{.ChannelName}}",
+    "jitsi.command.settings.wrong_naming_scheme_value": "Неверное значение `naming_scheme`, используйте `ask`, `words`, `uuid` или `mattermost`.",
+    "jitsi.command.settings.wrong_field": "Неверное поле конфигурации, используйте `embedded` или `naming_scheme`.",
+    "jitsi.command.settings.wrong_embedded_value": "Неверное значение `embedded`, используйте `true` или `false`.",
+    "jitsi.command.settings.updated": "Настройки Jitsi обновлены",
+    "jitsi.command.settings.unable_to_set": "Не удалось установить пользовательские настройки",
+    "jitsi.command.settings.unable_to_get": "Не удалось получить пользовательские настройки",
+    "jitsi.command.settings.invalid_parameters": "Неверные параметры настроек",
+    "jitsi.command.settings.current_values": "###### Jitsi настройки:\n* Встраивать: |{{.Embedded}}|\n* Схема названий: |{{.NamingScheme}}|",
+    "jitsi.command.help.title": "###### Mattermost Jitsi плагин - Справка по слэш-команде\n",
+    "jitsi.command.help.text": "* |/jitsi| - Создать новое совещание\n* |/jitsi [тема]| - Создать новое совещание с заданной темой\n* |/jitsi help| - Показать справочную информацию\n* |/jitsi settings| - Посмотреть свои персональные настройки для совещаний Jitsi\n* |/jitsi settings [настройка] [значение]| - Обновить свои персональные настройки (см. ниже для подробностей)\n\n###### Настройки Jitsi:\n* |/jitsi settings embedded [true/false]|: (Экспериментальное) При значении true совещания Jitsi встраиваются как плавающее окно внутри клиента Mattermost. При значении false совещания Jitsi открываются в новом окне.\n* |/jitsi settings naming_scheme [words/uuid/mattermost/ask]|: Выберите схему создания имени совещания:\n    * |words|: Случайные слова на английском языке (e.g. PlayfulDragonsObserveCuriously)\n    * |uuid|: UUID (универсальный уникальный идентификатор)\n    * |mattermost|: Специфические имена Mattermost. Комбинация имени команды, имени канала и случайного текста для публичных и приватных каналов; личное имя встречи в каналах личных сообщений.\n    * |ask|: Плагин предлагает выбрать имя при каждом начале совещания",
+    "jitsi.ask.uuid_meeting": "Название совещания с UUID",
+    "jitsi.ask.title": "Начать совещание Jitsi",
+    "jitsi.ask.select_meeting_type": "Выберите тип встречи, которую хотите начать",
+    "jitsi.ask.personal_meeting": "Персональная встреча",
+    "jitsi.ask.meeting_name_random_words": "Название совещания из случайных слов",
+    "jitsi.ask.channel_meeting": "Совещание канала"
 }
