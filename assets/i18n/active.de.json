@@ -1,98 +1,68 @@
 {
-  "jitsi.ask.channel_meeting": {
-    "hash": "sha1-c38fb5c89ece9869aa4b9b6d1d041ab64df1eb8f",
-    "other": "Kanal Meeting"
-  },
-  "jitsi.ask.meeting_name_random_words": {
-    "hash": "sha1-ee8f64a8a20eb04fefde418d9dc55d409664a2fb",
-    "other": "Zufällige Wörter als Meeting Name"
-  },
-  "jitsi.ask.personal_meeting": {
-    "hash": "sha1-9aa3e0500b4b0af16961174dcf792e9e11c5b220",
-    "other": "Persönliches Meeting"
-  },
-  "jitsi.ask.select_meeting_type": {
-    "hash": "sha1-e3bb1fbe427d3433e652b343086fa94926b8760b",
-    "other": "Welche Art von Meeting soll gestartet werden?"
-  },
-  "jitsi.ask.title": {
-    "hash": "sha1-06bd54e7555f74e5c45f19f5d357cabf399226d8",
-    "other": "Ein Jitsi Meeting starten"
-  },
-  "jitsi.ask.uuid_meeting": {
-    "hash": "sha1-573ba198f97f8c38ee986a2cad4068d0e54c9dbd",
-    "other": "Einzigartige Nummer als Meeting Name"
-  },
-  "jitsi.command.help.text": {
-    "hash": "sha1-08e1afe25556ca110a40b00eadf99b6716db697a",
-    "other": "* |/jitsi| - Starte ein Meeting\n* |/jitsi [Thema]| - Starte ein Meeting mit einem speziellen Thema\n* |/jitsi help| - Zeige diesen Hilfe-Text an\n* |/jitsi settings| - Zeige die die aktuellen Benutzereinstellungen an für das Jitsi Plugin\n* |/jitsi settings [Einstellung] [Wert]| - Aktualisiere die Benutzereinstellungen für das Jitsi Plugin (Siehe unten)\n\n###### Jitsi Einstellungen:\n* |/jitsi settings embedded [true/false]|: (Experimentell) Wenn auf `true` gesetzt, werden Jitsi Mettings als Fenster-Im-Festeris in  Mattermost angezeigt. When auf `false` gesetzt, werden Jitsi Meetings in einem neuen Fenster geöffnet.\n* |/jitsi settings naming_scheme [words/uuid/mattermost/ask]|: Select how meeting names are generated with one of these options:\n    * |words|: Zufällige englische Wörter (z.B. PlayfulDragonsObserveCuriously)\n    * |uuid|: Einzigartige Nummer\n    * |mattermost|: Mattermost spezifischer Name. Eine Kombinations aus Teamname, Kanalname and zufälligem Text in öffentlichen und privaten Kanälen. Persönlicher Meeting Name in Direkt- und Gruppennachrichten.\n    * |ask|: Frage beim Erstellen eines Meetings nach welcher Name verwendet werden soll."
-  },
-  "jitsi.command.help.title": {
-    "hash": "sha1-4323c51f8bbbb49db2a370dd496d29531a034b3c",
-    "other": "###### Mattermost Jitsi Plugin - Hilfe zu den Slash-Befehlen\n"
-  },
-  "jitsi.command.settings.current_values": {
-    "hash": "sha1-fe2a45638786b11d783dedacabad04227391973b",
-    "other": "###### Jitsi Einstellungen:\n* Fenster-in-Fenster: |{{.Embedded}}|\n* Naming Scheme: |{{.NamingScheme}}|"
-  },
-  "jitsi.command.settings.invalid_parameters": {
-    "hash": "sha1-f72c018607477396d845c7a3e11be73490b79a56",
-    "other": "Ungültiger Einstellung"
-  },
-  "jitsi.command.settings.unable_to_get": {
-    "hash": "sha1-7e8adf669715dc73bf3f13568593cc30539af7ec",
-    "other": "Abrufen der Benutzereinstellungen fehlgeschlagen"
-  },
-  "jitsi.command.settings.unable_to_set": {
-    "hash": "sha1-3bab2d5cd97e52eb365ab5e25aa5c89bf2a78f31",
-    "other": "Speichern der Benutzereinstellungen fehlgeschlagen"
-  },
-  "jitsi.command.settings.updated": {
-    "hash": "sha1-ea98a80baec114b32359809c03c7b11038b18eb6",
-    "other": "Benutzereinstellungen aktualisiert"
-  },
-  "jitsi.command.settings.wrong_embedded_value": {
-    "hash": "sha1-63273ba7ad2d4defa65c3c31765ed57668f157c3",
-    "other": "Ungültiger `embedded` Wert, muss `true` or `false` sein."
-  },
-  "jitsi.command.settings.wrong_field": {
-    "hash": "sha1-75edec3f38b0abd2004b0d5cb5318462993f6a18",
-    "other": "Ungültiger config field, use `embedded` or `naming_scheme`."
-  },
-  "jitsi.command.settings.wrong_naming_scheme_value": {
-    "hash": "sha1-fb39ca34d10fa7b9ccea30f0ebf7e1f7936b6b32",
-    "other": "Ungültiger `naming_scheme` Wer, muss `ask`, `words`, `uuid` or `mattermost` sein."
-  },
-  "jitsi.start_meeting.channel_meeting_topic": {
-    "hash": "sha1-87eea3707ed3cad060b73cb43c0d4efe4ec8cc84",
-    "other": "{{.ChannelName}} Kanal Meeting"
-  },
-  "jitsi.start_meeting.default_meeting_topic": {
-    "hash": "sha1-b057021a4c94f69bc1f90d9fa69a6165caeb4cce",
-    "other": "Jitsi Meeting"
-  },
-  "jitsi.start_meeting.fallback_text": {
-    "hash": "sha1-e956f3c3fd1a6c3995976154e0f45099234a1f0a",
-    "other": "Meeting gestartet: [{{.MeetingID}}]({{.MeetingURL}}).\n\n[Tritt Meeting bei]({{.MeetingURL}})"
-  },
-  "jitsi.start_meeting.meeting_id": {
-    "hash": "sha1-8a1315eaeb59e44132aa5c27e4f53e7ba92359f7",
-    "other": "Meeting ID"
-  },
-  "jitsi.start_meeting.meeting_link_valid_until": {
-    "hash": "sha1-2707cc0764b955fca772a7dd5337e4aaa6018fcc",
-    "other": "Meeting-Link gültig bis: {{.Datetime}}"
-  },
-  "jitsi.start_meeting.personal_meeting_id": {
-    "hash": "sha1-ba2b43d1c43e28926cc42c26651693567363dd77",
-    "other": "Persönliche Meeting ID"
-  },
-  "jitsi.start_meeting.personal_meeting_topic": {
-    "hash": "sha1-22fab211c66c011f0e1f2ca6303443da6e20793e",
-    "other": "{{.Name}}s persönliches Meeting"
-  },
-  "jitsi.start_meeting.slack_attachment_text": {
-    "hash": "sha1-7726587ccfee9bb7539aad458c154f8be3d95dcd",
-    "other": "{{.MeetingType}}: [{{.MeetingID}}]({{.MeetingURL}})\n\n[Tritt Meeting bei]({{.MeetingURL}})"
-  }
+    "jitsi": {
+        "ask": {
+            "channel_meeting": "Kanal Meeting",
+            "meeting_name_random_words": "Zufällige Wörter als Meeting Name",
+            "personal_meeting": "Persönliches Meeting",
+            "select_meeting_type": "Welche Art von Meeting soll gestartet werden?",
+            "title": "Ein Jitsi Meeting starten",
+            "uuid_meeting": "Einzigartige Nummer als Meeting Name"
+        },
+        "command": {
+            "help": {
+                "text": {
+                    "hash": "sha1-08e1afe25556ca110a40b00eadf99b6716db697a",
+                    "other": "* |/jitsi| - Starte ein Meeting\n* |/jitsi [Thema]| - Starte ein Meeting mit einem speziellen Thema\n* |/jitsi help| - Zeige diesen Hilfe-Text an\n* |/jitsi settings| - Zeige die die aktuellen Benutzereinstellungen an für das Jitsi Plugin\n* |/jitsi settings [Einstellung] [Wert]| - Aktualisiere die Benutzereinstellungen für das Jitsi Plugin (Siehe unten)\n\n###### Jitsi Einstellungen:\n* |/jitsi settings embedded [true/false]|: (Experimentell) Wenn auf `true` gesetzt, werden Jitsi Mettings als Fenster-Im-Festeris in  Mattermost angezeigt. When auf `false` gesetzt, werden Jitsi Meetings in einem neuen Fenster geöffnet.\n* |/jitsi settings naming_scheme [words/uuid/mattermost/ask]|: Select how meeting names are generated with one of these options:\n    * |words|: Zufällige englische Wörter (z.B. PlayfulDragonsObserveCuriously)\n    * |uuid|: Einzigartige Nummer\n    * |mattermost|: Mattermost spezifischer Name. Eine Kombinations aus Teamname, Kanalname and zufälligem Text in öffentlichen und privaten Kanälen. Persönlicher Meeting Name in Direkt- und Gruppennachrichten.\n    * |ask|: Frage beim Erstellen eines Meetings nach welcher Name verwendet werden soll."
+                },
+                "title": "###### Mattermost Jitsi Plugin - Hilfe zu den Slash-Befehlen\n"
+            },
+            "settings": {
+                "current_values": "###### Jitsi Einstellungen:\n* Fenster-in-Fenster: |{{.Embedded}}|\n* Naming Scheme: |{{.NamingScheme}}|",
+                "invalid_parameters": "Ungültiger Einstellung",
+                "unable_to_get": "Abrufen der Benutzereinstellungen fehlgeschlagen",
+                "unable_to_set": "Speichern der Benutzereinstellungen fehlgeschlagen",
+                "updated": "Benutzereinstellungen aktualisiert",
+                "wrong_embedded_value": "Ungültiger `embedded` Wert, muss `true` or `false` sein.",
+                "wrong_field": "\"Ungültiger config field, use `embedded` or `naming_scheme`.",
+                "wrong_naming_scheme_value": {
+                    "hash": "sha1-fb39ca34d10fa7b9ccea30f0ebf7e1f7936b6b32",
+                    "other": "Ungültiger `naming_scheme` Wer, muss `ask`, `words`, `uuid` or `mattermost` sein."
+                }
+            }
+        },
+        "start_meeting": {
+            "channel_meeting_topic": {
+                "hash": "sha1-87eea3707ed3cad060b73cb43c0d4efe4ec8cc84",
+                "other": "{{.ChannelName}} Kanal Meeting"
+            },
+            "default_meeting_topic": {
+                "hash": "sha1-b057021a4c94f69bc1f90d9fa69a6165caeb4cce",
+                "other": "Jitsi Meeting"
+            },
+            "fallback_text": {
+                "hash": "sha1-e956f3c3fd1a6c3995976154e0f45099234a1f0a",
+                "other": "Meeting gestartet: [{{.MeetingID}}]({{.MeetingURL}}).\n\n[Tritt Meeting bei]({{.MeetingURL}})"
+            },
+            "meeting_id": {
+                "hash": "sha1-8a1315eaeb59e44132aa5c27e4f53e7ba92359f7",
+                "other": "Meeting ID"
+            },
+            "meeting_link_valid_until": {
+                "hash": "sha1-2707cc0764b955fca772a7dd5337e4aaa6018fcc",
+                "other": "Meeting-Link gültig bis: {{.Datetime}}"
+            },
+            "personal_meeting_id": {
+                "hash": "sha1-ba2b43d1c43e28926cc42c26651693567363dd77",
+                "other": "Persönliche Meeting ID"
+            },
+            "personal_meeting_topic": {
+                "hash": "sha1-22fab211c66c011f0e1f2ca6303443da6e20793e",
+                "other": "{{.Name}}s persönliches Meeting"
+            },
+            "slack_attachment_text": {
+                "hash": "sha1-7726587ccfee9bb7539aad458c154f8be3d95dcd",
+                "other": "{{.MeetingType}}: [{{.MeetingID}}]({{.MeetingURL}})\n\n[Tritt Meeting bei]({{.MeetingURL}})"
+            }
+        }
+    }
 }
