@@ -3,7 +3,7 @@ module github.com/mattermost/mattermost-plugin-jitsi
 go 1.12
 
 require (
-	github.com/cristalhq/jwt/v2 v2.0.0
+	github.com/cristalhq/jwt/v3 v3.0.12
 	github.com/google/uuid v1.1.1
 	github.com/mattermost/mattermost-plugin-api v0.0.12
 	github.com/mattermost/mattermost-server/v5 v5.25.0

@@ -85,7 +85,7 @@
         "no-compare-neg-zero": 2,
         "no-cond-assign": [2, "except-parens"],
         "no-confusing-arrow": 2,
-        "no-console": 2,
+        "no-console": 0,
         "no-const-assign": 2,
         "no-constant-condition": 2,
         "no-debugger": 2,

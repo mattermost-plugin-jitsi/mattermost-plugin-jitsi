@@ -24,6 +24,10 @@ import (
 // If you add non-reference types to your configuration struct, be sure to rewrite Clone as a deep
 // copy appropriate for your types.
 type configuration struct {
+	JitsiSettings jitsisettings
+}
+
+type jitsisettings struct {
 	JitsiURL               string
 	JitsiJWT               bool
 	JitsiEmbedded          bool
@@ -32,17 +36,37 @@ type configuration struct {
 	JitsiLinkValidTime     int
 	JitsiNamingScheme      string
 	JitsiCompatibilityMode bool
+	UseJaaS                bool
+	JaaSAppID              string
+	JaaSApiKey             string
+	JaaSPrivateKey         string
 }
 
 const publicJitsiServerURL = "https://meet.jit.si"
+const public8x8vcURL = "https://8x8.vc"
 
 // GetJitsiURL return the currently configured JitsiURL or the URL from the
 // public servers provided by Jitsi.
 func (c *configuration) GetJitsiURL() string {
+	if len(c.JitsiSettings.JitsiURL) > 0 {
+		return c.JitsiSettings.JitsiURL
+	}
+	return publicJitsiServerURL
+}
+
+func (c *jitsisettings) GetJitsiURL() string {
 	if len(c.JitsiURL) > 0 {
 		return c.JitsiURL
 	}
 	return publicJitsiServerURL
+}
+
+func (c *configuration) Get8x8vcURL() string {
+	return public8x8vcURL
+}
+
+func (c *jitsisettings) Get8x8vcURL() string {
+	return public8x8vcURL
 }
 
 // Clone shallow copies the configuration. Your implementation may require a deep copy if
@@ -54,6 +78,43 @@ func (c *configuration) Clone() *configuration {
 
 // IsValid checks if all needed fields are set.
 func (c *configuration) IsValid() error {
+	if len(c.JitsiSettings.JitsiURL) > 0 {
+		_, err := url.Parse(c.JitsiSettings.JitsiURL)
+		if err != nil {
+			return fmt.Errorf("error invalid jitsiURL")
+		}
+	}
+
+	if c.JitsiSettings.JitsiJWT {
+		if len(c.JitsiSettings.JitsiAppID) == 0 {
+			return fmt.Errorf("error no Jitsi app ID was provided to use with JWT")
+		}
+		if len(c.JitsiSettings.JitsiAppSecret) == 0 {
+			return fmt.Errorf("error no Jitsi app secret provided to use with JWT")
+		}
+		if c.JitsiSettings.JitsiLinkValidTime < 1 {
+			c.JitsiSettings.JitsiLinkValidTime = 30
+		}
+	}
+
+	if c.JitsiSettings.UseJaaS {
+		if len(c.JitsiSettings.JaaSApiKey) == 0 {
+			return fmt.Errorf("error no JaaS Api Key was provided for JaaS")
+		}
+
+		if len(c.JitsiSettings.JaaSAppID) == 0 {
+			return fmt.Errorf("error no JaaS AppID was provided for JaaS")
+		}
+
+		if len(c.JitsiSettings.JaaSPrivateKey) == 0 {
+			return fmt.Errorf("error no JaaS Private KEy was provided for JaaS")
+		}
+	}
+
+	return nil
+}
+
+func (c *jitsisettings) IsValid() error {
 	if len(c.JitsiURL) > 0 {
 		_, err := url.Parse(c.JitsiURL)
 		if err != nil {
@@ -73,21 +134,36 @@ func (c *configuration) IsValid() error {
 		}
 	}
 
+	if c.UseJaaS {
+		if len(c.JaaSApiKey) == 0 {
+			return fmt.Errorf("error no JaaS Api Key was provided for JaaS")
+		}
+
+		if len(c.JaaSAppID) == 0 {
+			return fmt.Errorf("error no JaaS AppID was provided for JaaS")
+		}
+
+		if len(c.JaaSPrivateKey) == 0 {
+			return fmt.Errorf("error no JaaS Private KEy was provided for JaaS")
+		}
+	}
+
 	return nil
 }
 
 // getConfiguration retrieves the active configuration under lock, making it safe to use
 // concurrently. The active configuration may change underneath the client of this method, but
 // the struct returned by this API call is considered immutable.
-func (p *Plugin) getConfiguration() *configuration {
+func (p *Plugin) getConfiguration() *jitsisettings {
 	p.configurationLock.RLock()
 	defer p.configurationLock.RUnlock()
 
 	if p.configuration == nil {
-		return &configuration{}
+		newConfiguration := configuration{}
+		return &newConfiguration.JitsiSettings
 	}
 
-	return p.configuration
+	return &p.configuration.JitsiSettings
 }
 
 // setConfiguration replaces the active configuration under lock.
@@ -121,13 +197,11 @@ func (p *Plugin) setConfiguration(configuration *configuration) {
 // OnConfigurationChange is invoked when configuration changes may have been made.
 func (p *Plugin) OnConfigurationChange() error {
 	var configuration = new(configuration)
-
 	// Load the public configuration fields from the Mattermost server configuration.
 	if err := p.API.LoadPluginConfiguration(configuration); err != nil {
 		return errors.Wrap(err, "failed to load plugin configuration")
 	}
 
 	p.setConfiguration(configuration)
-
 	return nil
 }
