@@ -207,7 +207,6 @@ func (p *Plugin) settingsError(userID string, channelID string, errorText string
 func (p *Plugin) executeSettingsCommand(c *plugin.Context, args *model.CommandArgs, parameters []string) (*model.CommandResponse, *model.AppError) {
 	l := p.b.GetUserLocalizer(args.UserId)
 	text := ""
-	// TODO maybe handle JaaS
 
 	userConfig, err := p.getUserConfig(args.UserId)
 	if err != nil {

@@ -50,7 +50,6 @@
     "webpack-cli": "3.3.11"
   },
   "dependencies": {
-    "@types/html-webpack-plugin": "3.2.4",
     "core-js": "3.6.5",
     "mattermost-redux": "5.23.0",
     "prop-types": "15.7.2",

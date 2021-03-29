@@ -19,7 +19,6 @@ export default class JaaSSection extends React.Component<Props> {
     }
 
     render() {
-        // TODO replace with common components
         return (
             <div>
                 <div className='form-group'>

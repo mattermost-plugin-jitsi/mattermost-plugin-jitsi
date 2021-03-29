@@ -96,7 +96,7 @@ func (p *Plugin) handleJaaSSettings(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Unable to decode your request", http.StatusBadRequest)
 		return
 	}
-	// TODO remove reusage of variables
+
 	var user *model.User = nil
 	userID := r.Header.Get("Mattermost-User-Id")
 	if userID != "" {
