@@ -97,6 +97,7 @@ export default class JitsiSettings extends React.Component<Props, State> {
         this.onJaaSAppIDChanged = this.onJaaSAppIDChanged.bind(this);
         this.onJaaSPrivateKeyChanged = this.onJaaSPrivateKeyChanged.bind(this);
         this.onJaaSEmbeddedChanged = this.onJaaSEmbeddedChanged.bind(this);
+        this.onJaaSCompatibilityChange = this.onJaaSCompatibilityChange.bind(this);
 
         this.onJitsiAppIDChanged = this.onJitsiAppIDChanged.bind(this);
         this.onJitsiAppSecretChanged = this.onJitsiAppSecretChanged.bind(this);
@@ -160,6 +161,11 @@ export default class JitsiSettings extends React.Component<Props, State> {
         this.updateSettingsState('jitsiembedded', newValue);
     }
 
+    onJaaSCompatibilityChange(e: any) {
+        const newValue = e.target.value === 'true';
+        this.updateSettingsState('jitsicompatibilitymode', newValue);
+    }
+
     onJitsiAppIDChanged(e: any) {
         this.updateSettingsState('jitsiappid', e.target.value);
     }
@@ -169,7 +175,8 @@ export default class JitsiSettings extends React.Component<Props, State> {
     }
 
     onJitsiCompatibilityChanged(e: any) {
-        this.updateSettingsState('jitsicompatibilitymode', e.target.value);
+        const newValue = e.target.value === 'true';
+        this.updateSettingsState('jitsicompatibilitymode', newValue);
     }
 
     onJitsiEmbeddedChanged(e: any) {
@@ -224,10 +231,12 @@ export default class JitsiSettings extends React.Component<Props, State> {
                 onAppIDChange={this.onJaaSAppIDChanged}
                 onPrivateKeyChange={this.onJaaSPrivateKeyChanged}
                 onEmbeddedChange={this.onJaaSEmbeddedChanged}
+                onCompatibilityChange={this.onJaaSCompatibilityChange}
                 appID={this.state.value.jaasappid || ''}
                 apiKey={this.state.value.jaasapikey || ''}
                 privateKey={this.state.value.jaasprivatekey || ''}
                 embedded={this.state.value.jitsiembedded || false}
+                compatibilityMode={this.state.value.jitsicompatibilitymode || false}
             />
         );
     }

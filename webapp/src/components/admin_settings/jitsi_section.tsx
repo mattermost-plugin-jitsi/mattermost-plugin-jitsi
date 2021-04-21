@@ -244,7 +244,7 @@ export class JitsiSection extends React.Component<Props> {
                             <input
                                 type='radio'
                                 value='true'
-                                checked={this.props.embedded}
+                                checked={this.props.compatibilityMode}
                                 onChange={this.props.onJitsiCompatibilityChange}
                             />
                             <span>{'true'}</span>
@@ -253,7 +253,7 @@ export class JitsiSection extends React.Component<Props> {
                             <input
                                 type='radio'
                                 value='false'
-                                checked={!this.props.embedded}
+                                checked={!this.props.compatibilityMode}
                                 onChange={this.props.onJitsiCompatibilityChange}
                             />
                             <span>{'false'}</span>

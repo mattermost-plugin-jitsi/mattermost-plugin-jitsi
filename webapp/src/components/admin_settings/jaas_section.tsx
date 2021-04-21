@@ -6,10 +6,12 @@ type Props = {
     onApiKeyChange: any,
     onPrivateKeyChange: any,
     onEmbeddedChange: any,
+    onCompatibilityChange: any,
     apiKey: string,
     appID: string,
     privateKey: string
-    embedded: boolean
+    embedded: boolean,
+    compatibilityMode: boolean
 };
 
 export default class JaaSSection extends React.Component<Props> {
@@ -47,6 +49,36 @@ export default class JaaSSection extends React.Component<Props> {
                         <div className='help-text'>
                             <span>
                                 {'(Experimental) When true, JaaS video is embedded as a floating window inside Mattermost by default.'}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div className='form-group'>
+                    <label className='col-sm-4'>
+                        {'Enable Compatibility Mode:'}
+                    </label>
+                    <div className='col-sm-8'>
+                        <label className='radio-inline'>
+                            <input
+                                type='radio'
+                                value='true'
+                                checked={this.props.compatibilityMode}
+                                onChange={this.props.onCompatibilityChange}
+                            />
+                            <span>{'true'}</span>
+                        </label>
+                        <label className='radio-inline'>
+                            <input
+                                type='radio'
+                                value='false'
+                                checked={!this.props.compatibilityMode}
+                                onChange={this.props.onCompatibilityChange}
+                            />
+                            <span>{'false'}</span>
+                        </label>
+                        <div className='help-text'>
+                            <span>
+                                {'(Insecure) If your Jitsi server is not compatible with this plugin, include the JavaScript API hosted on your Jitsi server directly in Mattermost instead of the default API version provided by the plugin. WARNING: Enabling this setting can compromise the security of your Mattermost system, if your Jitsi server is not fully trusted and allows direct modification of program files. Use with caution.'}
                             </span>
                         </div>
                     </div>

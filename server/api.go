@@ -229,12 +229,11 @@ func (p *Plugin) handleConfig(w http.ResponseWriter, r *http.Request) {
 }
 
 func (p *Plugin) handleExternalAPIjs(w http.ResponseWriter, r *http.Request) {
-	if p.getConfiguration().UseJaaS {
-		p.proxyExternalAPIjsJaaS(w, r)
-		return
-	}
-
 	if p.getConfiguration().JitsiCompatibilityMode {
+		if p.getConfiguration().UseJaaS {
+			p.proxyExternalAPIjsJaaS(w, r)
+			return
+		}
 		p.proxyExternalAPIjs(w, r)
 		return
 	}
