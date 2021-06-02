@@ -109,8 +109,6 @@ export default class JitsiSettings extends React.Component<Props, State> {
         this.onJitsiURLChanged = this.onJitsiURLChanged.bind(this);
     }
 
-    componentDidMount() {}
-
     onModeSelected = (e: any) => {
         const newMode = e.target.value;
         this.setState((state) => {
