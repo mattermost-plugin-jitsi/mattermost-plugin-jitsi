@@ -2,14 +2,11 @@ import * as React from 'react';
 import {id as pluginId} from '../../../manifest';
 import {AnyAction} from 'redux';
 import {StartMeetingWindowAction, startMeetingWindowActionCreator} from '../../actions';
-import {JaaSState} from '../../util';
 import {ThunkDispatch} from 'redux-thunk';
 
 type Props = {
-    jaasJwt: string | null,
-    jaasPath: string | null,
     actions: {
-        startJaaSMeetingWindow: (jwt: string | null, path: string | null) => Promise<StartMeetingWindowAction>;
+        startJaaSMeetingWindow: (jwt: string | null, path: string | null) => Promise<StartMeetingWindowAction>
     }
 }
 
@@ -53,7 +50,10 @@ export class JaaSConference extends React.PureComponent<Props, State> {
             script.type = 'text/javascript';
             script.onload = () => {
                 if (!this.state.jaasRoom) {
-                    this.props.actions.startJaaSMeetingWindow(this.props.jaasJwt, this.props.jaasPath).
+                    const params = new URLSearchParams(window.location.search);
+                    const jwt = params.get('jwt');
+                    const path = window.location.pathname;
+                    this.props.actions.startJaaSMeetingWindow(jwt, path).
                         then((response) => {
                             this.setState({
                                 jaasRoom: response.data.jaasRoom,
@@ -91,13 +91,6 @@ function getStyle() : { [key: string]: React.CSSProperties} {
             height: '100%',
             display: 'flex'
         }
-    };
-}
-
-export function MapStateToProps(state: JaaSState) {
-    return {
-        jaasJwt: state.openJaaSMeetingNewWindowJwt,
-        jaasPath: state.openJaaSMeetingNewWindowPath
     };
 }
 

@@ -1,4 +1,4 @@
 import {connect} from 'react-redux';
-import {JaaSConference, MapDispatchToProps, MapStateToProps} from './jaas_conference';
+import {JaaSConference, MapDispatchToProps} from './jaas_conference';
 
-export default connect(MapStateToProps, MapDispatchToProps)(JaaSConference);
+export default connect(null, MapDispatchToProps)(JaaSConference);

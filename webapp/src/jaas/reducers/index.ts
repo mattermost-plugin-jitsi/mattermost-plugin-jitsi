@@ -20,19 +20,8 @@ function JaaSMeetingWindow(state: JaaSMeetingState = {}, action: JaaSActions) {
     return state;
 }
 
-function openJaasMeetingWindow(state: any = null, action: AnyAction) {
-    switch (action.type) {
-    default:
-        break;
-    }
-    return state;
-}
-
-const JaaSMeetingWindowReducer: Reducer<JaaSMeetingState> = JaaSMeetingWindow;
-const openJaasMeetingWindowReducer : Reducer<string | null> = openJaasMeetingWindow;
+export const JaaSMeetingWindowReducer: Reducer<JaaSMeetingState> = JaaSMeetingWindow;
 
 export default combineReducers<JaaSState>({
-    openJaaSMeetingNewWindowJwt: openJaasMeetingWindowReducer,
-    openJaaSMeetingNewWindowPath: openJaasMeetingWindowReducer,
     jaasMeetingState: JaaSMeetingWindowReducer
 });
