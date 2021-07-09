@@ -95,7 +95,8 @@ export default class Conference extends React.PureComponent<Props, State> {
                 this.resizeIframe();
             }
         };
-        this.api = new (window as any).JitsiMeetExternalAPI(domain, options);
+
+        this.api = new (window as any).JitsiMeetExternalAPI(post.props.jaas_meeting ? '8x8.vc' : domain, options);
         this.api.on('videoConferenceJoined', () => {
             if (this.state.minimized) {
                 this.minimize();

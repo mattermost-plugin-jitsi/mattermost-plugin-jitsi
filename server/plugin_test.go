@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cristalhq/jwt/v2"
+	"github.com/cristalhq/jwt/v3"
 	"github.com/mattermost/mattermost-plugin-api/i18n"
 	"github.com/mattermost/mattermost-server/v5/model"
 	"github.com/mattermost/mattermost-server/v5/plugin/plugintest"
@@ -51,7 +51,9 @@ func TestSignClaims(t *testing.T) {
 func TestStartMeeting(t *testing.T) {
 	p := Plugin{
 		configuration: &configuration{
-			JitsiURL: "http://test",
+			JitsiSettings: jitsisettings{
+				JitsiURL: "http://test",
+			},
 		},
 	}
 	apiMock := plugintest.API{}

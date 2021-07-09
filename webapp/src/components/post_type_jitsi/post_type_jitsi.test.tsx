@@ -38,7 +38,7 @@ describe('PostTypeJitsi', () => {
             jwt_meeting: true,
             meeting_jwt: 'xxxxxxxxxxxx',
             meeting_topic: 'Test topic',
-            meeting_id: 'test',
+            meeting_id_label: 'test',
             meeting_personal: false
         }
     };
